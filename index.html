@@ -93,8 +93,8 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="text-center">
-                    <input class="text-center" type="text" id="myInput" placeholder="Title...">
-                    <span onclick="newElement()" class="addBtn">Add</span>
+                    <input class="text-center" type="text" id="myInput" placeholder="Ex: Take out the trash.">
+                    <button class="button-add" id="addBtn" onclick="newElement()">Add</button>
                 </div>
             </div>
 
@@ -104,11 +104,12 @@
             <button class="button" id="exportBtn">Export list</button>
 
             <script>
-                var myNodelist = document.getElementsByTagName("LI");
+                var myNodelist = document.getElementsById("myUL");
                 var i;
-                for (i = 0; i < myNodelist.length; i++) {
+                for (i = 0; i < myNodelist.length - 1; i++) {
                     var span = document.createElement("SPAN");
                     var txt = document.createTextNode("\u00D7");
+
                     span.className = "close";
                     span.appendChild(txt);
                     myNodelist[i].appendChild(span);
@@ -123,12 +124,7 @@
                     }
                 }
 
-                var list = document.querySelector('ul');
-                list.addEventListener('click', function (ev) {
-                    if (ev.target.tagName === 'LI') {
-                        ev.target.classList.toggle('checked');
-                    }
-                }, false);
+
 
                 function newElement() {
                     var li = document.createElement("li");
