@@ -104,7 +104,8 @@
             <button class="button" id="exportBtn">Export list</button>
 
             <script>
-                var myNodelist = document.getElementsById("myUL");
+                var myNodelist = document.getElementsByTagName("ul");
+                myNodelist = myNodelist[0];
                 var i;
                 for (i = 0; i < myNodelist.length - 1; i++) {
                     var span = document.createElement("SPAN");
@@ -123,8 +124,6 @@
                         div.style.display = "none";
                     }
                 }
-
-
 
                 function newElement() {
                     var li = document.createElement("li");
