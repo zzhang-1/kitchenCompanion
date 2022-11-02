@@ -83,7 +83,99 @@
 
     <!-- shoppingList section -->
     <section class="page-section" id="shopping">
+        <div class="container d-flex align-items-center flex-column" id="ShoppingList">
+            <div id="myDIV" class="header">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"> Shopping List</h2>
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="text-center">
+                    <input class="text-center" type="text" id="myInput1" placeholder="Item Name">
+                    <input class="text-center" type="text" id="myInput2" placeholder="Item Quantity">
+                    <button class = 'font-weight-bold bg-secondary text-white rounded' span onclick="newElement()"
+                     class="addBtn">Add Item to List</span>
+                </div>
+            </div>
 
+            <ul id="myUL">
+            </ul>
+
+            <button class='font-weight-bold bg-secondary text-white rounded' id="exportBtn">Export Shopping List</button>
+
+            <script>
+                var myNodelist = document.getElementsByTagName("LI");
+                var i;
+                for (i = 0; i < myNodelist.length; i++) {
+                    var span = document.createElement("SPAN");
+                    var txt = document.createTextNode("\u00D7");
+                    span.className = "close";
+                    span.appendChild(txt);
+                    myNodelist[i].appendChild(span);
+                }
+
+                var close = document.getElementsByClassName("close");
+                var i;
+                for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function () {
+                        var div = this.parentElement;
+                        div.style.display = "none";
+                    }
+                }
+
+                var list = document.querySelector('ul');
+                list.addEventListener('click', function (ev) {
+                    if (ev.target.tagName === 'LI') {
+                        ev.target.classList.toggle('checked');
+                    }
+                }, false);
+
+                function newElement() {
+                    var li = document.createElement("li");
+                    var inputValue = document.getElementById("myInput1").value;
+                    var secoondInput = document.getElementById("myInput2").value;
+                    var t = document.createTextNode(inputValue + ' ' + secoondInput);
+                    li.appendChild(t);
+                    if (inputValue === '') {
+                        alert("You must add an item name!");
+                    } else if(secoondInput === ''){
+                        alert("You must add a quantity!");
+                    } else{
+                        document.getElementById("myUL").appendChild(li);
+                    }
+                    document.getElementById("myInput1").value = "";
+                    document.getElementById("myInput2").value = "";
+
+                    var span = document.createElement("SPAN");
+                    var txt = document.createTextNode("\u00D7");
+                    span.className = "close";
+                    span.appendChild(txt);
+                    li.appendChild(span);
+
+                    for (i = 0; i < close.length; i++) {
+                        close[i].onclick = function () {
+                            var div = this.parentElement;
+                            div.style.display = "none";
+                        }
+                    }
+                }
+            </script>
+
+            <script>
+                var button = document.getElementById("exportBtn");
+                var makepdf = document.getElementById("myUL");
+                button.addEventListener("click", function () {
+                    var mywindow = window.open("", "PRINT", "height=600,width=600");
+                    mywindow.document.write(makepdf.innerHTML);
+                    mywindow.document.close();
+                    mywindow.focus();
+                    mywindow.print();
+                    return true;
+                });
+            </script>
+
+        </div>
     </section>
 
     <!-- calendar Section-->
