@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Kitchen Companion</title>
-
+    <title>Freelancer - Start Bootstrap Theme</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
@@ -59,16 +62,110 @@
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Masthead Subheading-->
-            <p class="masthead-subheading font-weight-light mb-0">The future of kitchen organization</p>
+            <p class="masthead-subheading font-weight-light mb-0">The Future of Kitchen Organization</p>
         </div>
     </header>
+
     <!-- About Section-->
-    <section class="page-section" id="about">
+    <section class="page-section bg-secondary text-white text-center" id="about">
+        <div class="container c-flex align-items-center flex-column">
+            <p class="mb-4">
+                Kitchen Companion is an application to create an easy process for keeping your household clean and
+                organized.
+                The application provides an array of features such as creating a To Do list for tasks that need to be
+                completed, keeping an
+                inventory of house hold items, a detailed budget for groceries including a shopping list, as well as a
+                calendar to help roomates organize
+                potential times to use the kitchen.
+            </p>
+        </div>
 
     </section>
     <!-- ToDO Section-->
     <section class="page-section" id="todo">
+        <div class="container d-flex align-items-center flex-column" id="ToDo">
+            <div id="myDIV" class="header">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"> Kitchen ToDo List
+                </h2>
+                <!-- <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div> -->
+                <div class="text-center">
+                    <input class="text-center" type="text" id="myInput" placeholder="Ex: Take out the trash.">
+                    <button class="button-add" id="addBtn" onclick="newElement()">Add</button>
+                </div>
+            </div>
 
+            <ul id="myUL">
+            </ul>
+
+            <button class="button" id="exportBtn">Export list</button>
+
+            <script>
+                var myNodelist = document.getElementsByTagName("ul");
+                myNodelist = myNodelist[0];
+                var i;
+                for (i = 0; i < myNodelist.length - 1; i++) {
+                    var span = document.createElement("SPAN");
+                    var txt = document.createTextNode("\u00D7");
+
+                    span.className = "close";
+                    span.appendChild(txt);
+                    myNodelist[i].appendChild(span);
+                }
+
+                var close = document.getElementsByClassName("close");
+                var i;
+                for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function () {
+                        var div = this.parentElement;
+                        div.style.display = "none";
+                    }
+                }
+
+                function newElement() {
+                    var li = document.createElement("li");
+                    var inputValue = document.getElementById("myInput").value;
+                    var t = document.createTextNode(inputValue);
+                    li.appendChild(t);
+                    if (inputValue === '') {
+                        alert("You must write something!");
+                    } else {
+                        document.getElementById("myUL").appendChild(li);
+                    }
+                    document.getElementById("myInput").value = "";
+
+                    var span = document.createElement("SPAN");
+                    var txt = document.createTextNode("\u00D7");
+                    span.className = "close";
+                    span.appendChild(txt);
+                    li.appendChild(span);
+
+                    for (i = 0; i < close.length; i++) {
+                        close[i].onclick = function () {
+                            var div = this.parentElement;
+                            div.style.display = "none";
+                        }
+                    }
+                }
+            </script>
+
+            <script>
+                var button = document.getElementById("exportBtn");
+                var makepdf = document.getElementById("myUL");
+                button.addEventListener("click", function () {
+                    var mywindow = window.open("", "PRINT", "height=600,width=600");
+                    mywindow.document.write(makepdf.innerHTML);
+                    mywindow.document.close();
+                    mywindow.focus();
+                    mywindow.print();
+                    return true;
+                });
+            </script>
+
+        </div>
     </section>
 
     <!-- inventory Section-->
@@ -78,6 +175,136 @@
 
     <!-- budget Section-->
     <section class="page-section" id="budget">
+        <div class="wrapper">
+            <div class="budget-container">
+                <div class="sub-container">
+                    <!-- Budget -->
+                    <div class="total-amount-container">
+                        <h3>Budget</h3>
+                        <p class="hide error" id="budget-error">
+                            Value cannot be empty or negative
+                        </p>
+                        <input type="number" id="total-amount" placeholder="Enter Total Amount" />
+                        <button class="budget-submit" id="total-amount-button">Set Budget</button>
+                    </div>
+
+                    <!-- Expenditure -->
+                    <div class="user-amount-container">
+                        <h3>Expenses</h3>
+                        <p class="hide error" id="product-title-error">
+                            Values cannot be empty
+                        </p>
+                        <input type="text" class="product-title" id="product-title"
+                            placeholder="Enter Title of Product" />
+                        <input type="number" id="user-amount" placeholder="Enter Cost of Product" />
+                        <button class="budget-submit" id="check-amount">Check Amount</button>
+                    </div>
+                </div>
+                <!-- Output -->
+                <div class="output-container flex-space">
+                    <div>
+                        <p>Total Budget</p>
+                        <span id="amount">0</span>
+                    </div>
+                    <div>
+                        <p>Expenses</p>
+                        <span id="expenditure-value">0</span>
+                    </div>
+                    <div>
+                        <p>Balance</p>
+                        <span id="balance-amount">0</span>
+                    </div>
+                </div>
+            </div>
+            <!-- List -->
+            <div class="list">
+                <h3>Expense List</h3>
+                <div class="list-container" id="list"></div>
+            </div>
+        </div>
+        <!-- Script -->
+        <script>
+            let totalAmount = document.getElementById("total-amount");
+            let userAmount = document.getElementById("user-amount");
+            const checkAmountButton = document.getElementById("check-amount");
+            const totalAmountButton = document.getElementById("total-amount-button");
+            const productTitle = document.getElementById("product-title");
+            const errorMessage = document.getElementById("budget-error");
+            const productTitleError = document.getElementById("product-title-error");
+            const productCostError = document.getElementById("product-cost-error");
+            const amount = document.getElementById("amount");
+            const expenditureValue = document.getElementById("expenditure-value");
+            const balanceValue = document.getElementById("balance-amount");
+            const list = document.getElementById("list");
+            let tempAmount = 0;
+
+            //Set Budget Part
+            totalAmountButton.addEventListener("click", () => {
+                tempAmount = totalAmount.value;
+                //empty or negative input
+                if (tempAmount === "" || tempAmount < 0) {
+                    errorMessage.classList.remove("hide");
+                } else {
+                    errorMessage.classList.add("hide");
+                    //Set Budget
+                    amount.innerHTML = tempAmount;
+                    //Set Balance
+                    balanceValue.innerText = tempAmount - expenditureValue.innerText;
+                    //Clear Input Box
+                    totalAmount.value = "";
+                }
+            });
+            //Function To Modify List Elements
+            const modifyElement = (element) => {
+                let parentDiv = element.parentElement;
+                let currentBalance = balanceValue.innerText;
+                let currentExpense = expenditureValue.innerText;
+                let parentAmount = parentDiv.querySelector(".amount").innerText;
+                balanceValue.innerText = parseInt(currentBalance) + parseInt(parentAmount);
+                expenditureValue.innerText = parseInt(currentExpense) - parseInt(parentAmount);
+                parentDiv.remove();
+            };
+
+            //Function To Create List
+            const listCreator = (expenseName, expenseValue) => {
+                let sublistContent = document.createElement("div");
+                sublistContent.classList.add("sublist-content", "flex-space");
+                list.appendChild(sublistContent);
+                sublistContent.innerHTML =
+                    `<p class="product">${expenseName}</p><p class="amount">${expenseValue}</p>`;
+                let deleteButton = document.createElement("button");
+                deleteButton.classList.add("fa-solid", "fa-trash-can", "delete");
+                deleteButton.style.fontSize = "1.2em";
+                console.log("vvvvvvvv");
+                deleteButton.addEventListener("click", () => {
+                    modifyElement(deleteButton);
+                });
+                sublistContent.appendChild(deleteButton);
+                document.getElementById("list").appendChild(sublistContent);
+            };
+
+            //Function To Add Expenses
+            checkAmountButton.addEventListener("click", () => {
+                //empty checks
+                if (!userAmount.value || !productTitle.value) {
+                    productTitleError.classList.remove("hide");
+                    return false;
+                }
+                //Expense
+                let expenditure = parseInt(userAmount.value);
+                //Total expense (existing + new)
+                let sum = parseInt(expenditureValue.innerText) + expenditure;
+                expenditureValue.innerText = sum;
+                //Total balance(budget - total expense)
+                const totalBalance = tempAmount - sum;
+                balanceValue.innerText = totalBalance;
+                //Create list
+                listCreator(productTitle.value, userAmount.value);
+                //Empty inputs
+                productTitle.value = "";
+                userAmount.value = "";
+            });
+        </script>
 
     </section>
 
@@ -183,15 +410,78 @@
 
     <!-- calendar Section-->
     <section class="page-section" id="calendar">
+        <div id="calender-super">
+            <div class="calender-container">
+                <h1 id="calender-header">Calender</h1>
+                <label for="calender-name">Name:</label>
+                <input type="text" id="calender-name">
+                <label for="calendner-date">Date:</label>
+                <input type="date" id="calender-date">
+                <br>
+                <label for="calendnar-start">Start Time:</label>
+                <input type="number" id="calender-start" min="0" max="23">
+                <label for="calendnar-end">End Time:</label>
+                <input type="number" id="calender-end" min="0" max="23">
+                <br>
+                <button id="calender-button">ADD TO SLOT</button>
+            </div>
+            <div id="cooking-list"></div>
+        </div>
+        <script>
+            let calButton = document.getElementById("calender-button");
+            calButton.addEventListener("click", () => {
+                let name = document.getElementById("calender-name").value;
+                let date = document.getElementById("calender-date").value;
+                let startTime = document.getElementById("calender-start").value;
+                let endTime = document.getElementById("calender-end").value;
+                console.log(date.toString());
+                if (name === "" || date.length === 0) {
+                    alert("Please Enter a valid name and date")
+                } else if (Number(endTime) <= Number(startTime)) {
+                    alert("please enter a correct time range")
+                } else {
+                    document.querySelector("#cooking-list").innerHTML += `
+                <div class = "cooking-slot">
+                    <span id = "slotName"> 
+                        On ${date}, From ${startTime} to ${endTime} was scheduled by ${name}
+                    </span>
+                    <button class =" calender-delete">
+                        <span id = "delete-span">CONFIRM DELETE</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>  
+                    </button>
+                    
+                </div>
+                `;
 
+                    var current_slots = document.querySelectorAll(".calender-delete");
+                    for (var i = 0; i < current_slots.length; i++) {
+                        current_slots[i].onclick = function () {
+                            this.parentNode.remove();
+                        }
+                    }
+                }
+
+
+            });
+        </script>
     </section>
 
 
 
 
     <!-- Footer-->
-    <footer class="footer text-center">
-
-
+    <footer class="footer text-center"></footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
 
 </html>
