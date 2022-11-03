@@ -44,6 +44,8 @@
                             href="#shopping">ShoppingList</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
                             href="#calendar">Calendar</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="#recipe">Recipe</a></li>
                 </ul>
             </div>
         </div>
@@ -185,6 +187,75 @@
 
     <!-- calendar Section-->
     <section class="page-section" id="calendar">
+
+    </section>
+
+      <!-- recipe Section-->
+    <section class="page-section" id="recipe">
+        <div class="container d-flex align-items-center flex-column" id="Recipe">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"> Recipe
+            </h2>
+            <form id="recipe-form">
+                <input id="myInputRecipe" onkeyup="myFunction()" type="text" placeholder="Search Your Recipe...">
+            </form>
+        </div>
+        <div class="search-result">
+            <div class="item">
+                <img src="assets/img/buffalo-chicken-dip.png">
+                <div class="flex-container">
+                    <h1 class="recipe-name">Buffalo Chicken Dip</h1>
+                    <a class="view-button" href="recipe1.html">View Recipe</a>
+                </div>
+                <p class="item-data"> Calories: 284</p>
+            </div>
+            <div class="item">
+                <img src="assets/img/roasted-chicken.png">
+                <div class="flex-container">
+                    <h1 class="recipe-name">Juicy Roasted Chicken</h1>
+                    <a class="view-button" href="recipe2.html">View Recipe</a>
+                </div>
+                <p class="item-data"> Calories: 423</p>
+            </div>
+            <div class="item">
+                <img src="assets/img/chicken-pot-pie.png">
+                <div class="flex-container">
+                    <h1 class="recipe-name">Chicken Pot Pie</h1>
+                    <a class="view-button" href="recipe3.html">View Recipe</a>
+                </div>
+                <p class="item-data"> Calories: 412</p>
+            </div>
+            <div class="item">
+                <img src="assets/img/chicken-pot-pie.png">
+                <div class="flex-container">
+                    <h1 class="recipe-name">Pumpkin Waffles with Apple Cider Syrup</h1>
+                    <a class="view-button" href="recipe4.html">View Recipe</a>
+                </div>
+                <p class="item-data"> Calories: 530</p>
+            </div>
+        </div>
+        <section id="recipe1">
+
+
+        </section>
+        <script>
+            function myFunction() {
+                let input;
+                input = document.getElementById("myInputRecipe");
+                
+                filter = input.value.toUpperCase();
+                let recipeItem = document.getElementsByClassName('item')
+                let recipeName = document.getElementsByClassName('recipe-name')
+                console.log(recipeName)
+                for(i = 0; i < recipeName.length; i++){
+                    if(!recipeName[i].innerHTML.toUpperCase().includes(input.value.toUpperCase())){
+                        recipeItem[i].style.display="None";
+                    }
+                    else{
+                        recipeItem[i].style.display="";
+                    }
+                }
+            }
+        </script>
 
     </section>
 

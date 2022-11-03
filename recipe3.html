@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Freelancer - Start Bootstrap Theme</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Kitchen Companion</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="index.html#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="index.html#todo">ToDo</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="index.html#inventory">Inventory</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="index.html#budget">Budget</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="index.html#shopping">ShoppingList</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="index.html#calendar">Calendar</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="index.html#recipe">Recipe</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="assets/img/logo.png" alt="..." />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">Kitchen Companion</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0">The future of kitchen organization</p>
+        </div>
+    </header>
+    <section>
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+                Chicken Pot Pie Recipe
+                
+            </h1><br><br>
+            <label><b>Search Ingredient</b></label>
+            <input class="text-center" type="text" id="myInputIngredient" onkeyup="myFunction()" placeholder="Search Ingredient">
+            
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Ingredients</h2>
+            <ul class="page-section-heading text-center text-uppercase text-secondary mb-0" id="myUL">
+                <li><a href="">1 pound skinless, boneless chicken breast halves - cubed</a></li>
+                <li><a href="#">1 cup sliced carrots</a></li>
+              
+                <li><a href="#">1 cup frozen green peas</a></li>
+                <li><a href="#">½ cup sliced celery</a></li>
+              
+                <li><a href="#">⅓ cup butter</a></li>
+                <li><a href="#">⅓ cup chopped onion</a></li>
+                <li><a href="#">⅓ cup all-purpose flour</a></li>
+                <li><a href="#">½ teaspoon salt</a></li>
+                <li><a href="#">¼ teaspoon black pepper</a></li>
+                <li><a href="#">¼ teaspoon celery seed</a></li>
+                <li><a href="#">1 ¾ cups chicken broth</a></li>
+                <li><a href="#">⅔ cup milk</a></li>
+                <li><a href="#">2 (9 inch) unbaked pie crusts</a></li>
+        
+            </ul>
+            <script>
+                function myFunction() {
+                    let input = document.getElementById("myInputIngredient");
+                    filter = input.value.toUpperCase();
+                    ul = document.getElementById("myUL");
+                    li = ul.getElementsByTagName("li");
+                    for (i = 0; i < li.length; i++) {
+                        a = li[i].getElementsByTagName("a")[0];
+                        
+                        txtValue = a.textContent || a.innerText;
+                        
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            li[i].style.display = "";
+                        } else {
+                            li[i].style.display = "none";
+                        }
+    }
+                }
+            </script>
+            <h2>Step 1</h2>
+            <p>
+                Preheat the oven to 425 degrees F (220 degrees C.)
+            </p>
+            <h2>Step 2</h2>
+            <p>
+                Combine chicken, carrots, peas, and celery in a saucepan; add water to cover and bring to a boil. 
+                Boil for 15 minutes, then remove from the heat and drain.
+            </p>
+            <h2>Step 3</h2>
+            <p>
+                While the chicken is cooking, melt butter in another saucepan over medium heat. 
+                Add onion and cook until soft and translucent, 5 to 7 minutes. Stir in flour, salt, pepper, and celery seed. 
+                Slowly stir in chicken broth and milk. Reduce heat to medium-low and simmer until thick, 5 to 10 minutes. 
+                Remove from heat and set aside.
+            </p>
+            <h2>Step 4</h2>
+            <p>
+                Place chicken and vegetables in the bottom pie crust. 
+                Pour hot liquid mixture over top. 
+                Cover with top crust, seal the edges, and cut away any excess dough. 
+                Make several small slits in the top crust to allow steam to escape.
+            </p>
+            <h2>Step 5</h2>
+            <p>
+                Bake in the preheated oven until pastry is golden brown and filling is bubbly, 30 to 35 minutes. 
+                Cool for 10 minutes before serving.
+            </p>
+        </div>
+
+    </section>
+    
+</body>
