@@ -94,14 +94,15 @@
                 </div> -->
                 <div class="text-center">
                     <input class="text-center" type="text" id="myInput" placeholder="Ex: Take out the trash.">
-                    <button class="button-add" id="addBtn" onclick="newElement()">Add</button>
+                    <button class="font-weight-bold bg-secondary text-white rounded button-add" id="addBtn"
+                        onclick="newElement_todo()">Add</button>
                 </div>
             </div>
 
-            <ul id="myUL">
+            <ul id="myUL_todo">
             </ul>
 
-            <button class="button" id="exportBtn">Export list</button>
+            <button class="font-weight-bold bg-secondary text-white rounded" id="exportBtn">Export list</button>
 
             <script>
                 var myNodelist = document.getElementsByTagName("ul");
@@ -125,7 +126,7 @@
                     }
                 }
 
-                function newElement() {
+                function newElement_todo() {
                     var li = document.createElement("li");
                     var inputValue = document.getElementById("myInput").value;
                     var t = document.createTextNode(inputValue);
@@ -133,7 +134,7 @@
                     if (inputValue === '') {
                         alert("You must write something!");
                     } else {
-                        document.getElementById("myUL").appendChild(li);
+                        document.getElementById("myUL_todo").appendChild(li);
                     }
                     document.getElementById("myInput").value = "";
 
@@ -154,7 +155,7 @@
 
             <script>
                 var button = document.getElementById("exportBtn");
-                var makepdf = document.getElementById("myUL");
+                var makepdf = document.getElementById("myUL_todo");
                 button.addEventListener("click", function () {
                     var mywindow = window.open("", "PRINT", "height=600,width=600");
                     mywindow.document.write(makepdf.innerHTML);
@@ -321,20 +322,22 @@
                 <div class="text-center">
                     <input class="text-center rounded" type="text" size="12" id="myInput1" placeholder="Item Name">
                     <input class="text-center rounded" type="text" size="12" id="myInput2" placeholder="Item Quantity">
-                    <button class = 'font-weight-bold bg-secondary text-white rounded' span onclick="newElement()"
-                     class="addBtn">Add Item to List</span>
+                    <button class='font-weight-bold bg-secondary text-white rounded' span
+                        onclick="newElement_shopping()" class="addBtn">Add Item to List</span>
                 </div>
             </div>
 
-            <ul id="myUL">
+            <ul id="myUL_shopping">
             </ul>
 
-            <button class='font-weight-bold bg-secondary text-white rounded' id="exportBtn">Export Shopping List</button>
+            <button class='font-weight-bold bg-secondary text-white rounded' id="exportBtn">Export Shopping
+                List</button>
 
             <script>
-                var myNodelist = document.getElementsByTagName("LI");
+                var myNodelist = document.getElementsByTagName("ul");
+                myNodelist = myNodelist[1];
                 var i;
-                for (i = 0; i < myNodelist.length; i++) {
+                for (i = 0; i < myNodelist.length - 1; i++) {
                     var span = document.createElement("SPAN");
                     var txt = document.createTextNode("\u00D7");
                     span.className = "close";
@@ -351,14 +354,8 @@
                     }
                 }
 
-                var list = document.querySelector('ul');
-                list.addEventListener('click', function (ev) {
-                    if (ev.target.tagName === 'LI') {
-                        ev.target.classList.toggle('checked');
-                    }
-                }, false);
 
-                function newElement() {
+                function newElement_shopping() {
                     var li = document.createElement("li");
                     var inputValue = document.getElementById("myInput1").value;
                     var secoondInput = document.getElementById("myInput2").value;
@@ -366,11 +363,11 @@
                     li.appendChild(t);
                     if (inputValue === '') {
                         alert("You must add an item name!");
-                    } else if(secoondInput === ''){
+                    } else if (secoondInput === '') {
                         alert("You must add a quantity!");
-                    } else{
+                    } else {
                         //if(inputValue is in inventory){alert("Item added to list, however some exists in inventory");}
-                        document.getElementById("myUL").appendChild(li);
+                        document.getElementById("myUL_shopping").appendChild(li);
                     }
                     document.getElementById("myInput1").value = "";
                     document.getElementById("myInput2").value = "";
@@ -391,17 +388,17 @@
 
             <script>
                 var button = document.getElementById("exportBtn");
-                var makepdf = document.getElementById("myUL");
+                var makepdf = document.getElementById("myUL_shopping");
                 button.addEventListener("click", function () {
-                    if(makepdf.innerHTML.trim() === ''){
+                    if (makepdf.innerHTML.trim() === '') {
                         alert("Your Shopping List is Empty!");
-                    } else{
-                    var mywindow = window.open("", "PRINT", "height=600,width=600");
-                    mywindow.document.write(makepdf.innerHTML);
-                    mywindow.document.close();
-                    mywindow.focus();
-                    mywindow.print();
-                    return true;
+                    } else {
+                        var mywindow = window.open("", "PRINT", "height=600,width=600");
+                        mywindow.document.write(makepdf.innerHTML);
+                        mywindow.document.close();
+                        mywindow.focus();
+                        mywindow.print();
+                        return true;
                     }
                 });
             </script>
