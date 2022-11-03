@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>Kitchen Companion</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -32,20 +32,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#about">About</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#todo">ToDo</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#inventory">Inventory</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#budget">Budget</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#shopping">ShoppingList</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#calendar">Calendar</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#recipe">Recipe</a></li>
+                    <li class="nav-item mx-0 mx-lg-1" style="border-width:3px; border-style:solid; border-color:white;">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded text-center" href="#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1" style="border-width:3px; border-style:solid; border-color:white;">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded text-center" href="#todo">ToDo</a></li>
+                    <li class="nav-item mx-0 mx-lg-1" style="border-width:3px; border-style:solid; border-color:white;">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded text-center" href="#inventory">Inventory</a></li>
+                    <li class="nav-item mx-0 mx-lg-1" style="border-width:3px; border-style:solid; border-color:white;">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded text-center" href="#budget">Budget</a></li>
+                    <li class="nav-item mx-0 mx-lg-1" style="border-width:3px; border-style:solid; border-color:white;">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded text-center" href="#shopping">ShoppingList</a></li>
+                    <li class="nav-item mx-0 mx-lg-1" style="border-width:3px; border-style:solid; border-color:white;">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded text-center" href="#calendar">Calendar</a></li>
+                    <li class="nav-item mx-0 mx-lg-1" style="border-width:3px; border-style:solid; border-color:white;">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded text-center" href="#recipe">Recipe</a></li>
                 </ul>
             </div>
         </div>
@@ -89,13 +89,14 @@
             <div id="myDIV" class="header">
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"> Kitchen ToDo List
                 </h2>
-                <!-- <div class="divider-custom">
+                <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
-                </div> -->
+                </div>
                 <div class="text-center">
-                    <input class="text-center" type="text" id="myInput" placeholder="Ex: Take out the trash.">
+                    <input class="text-center" type="text" id="myInput" placeholder="Ex: Take out the trash."
+                        onclick="displayKeyboard_todo()">
                     <button class="font-weight-bold bg-secondary text-white rounded button-add" id="addBtn"
                         onclick="newElement_todo()">Add</button>
                 </div>
@@ -104,8 +105,16 @@
             <ul id="myUL_todo">
             </ul>
 
-            <button class="font-weight-bold bg-secondary text-white rounded" id="exportBtn">Export list</button>
+            <img class="keyboard-todo" src="assets/img/keyboard.png">
 
+
+            <button class="font-weight-bold bg-secondary text-white rounded" id="exportBtn">Export list</button>
+            <script>
+                function displayKeyboard_todo() {
+                    // alert(document.getElementsByClassName("keyboard"));
+                    document.getElementsByClassName("keyboard-todo")[0].style.display = "block";
+                }
+            </script>
             <script>
                 var myNodelist = document.getElementsByTagName("ul");
                 myNodelist = myNodelist[0];
@@ -152,6 +161,11 @@
                             div.style.display = "none";
                         }
                     }
+                    removeKeyboard_todo()
+                }
+
+                function removeKeyboard_todo() {
+                    document.getElementsByClassName("keyboard-todo")[0].style.display = "none";
                 }
             </script>
 
@@ -182,26 +196,52 @@
             <div class="budget-container">
                 <div class="sub-container">
                     <!-- Budget -->
-                    <div class="total-amount-container">
-                        <h3>Budget</h3>
+                    <div class="total-amount-container text-center">
+                        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Budget</h2>
+                        <div class="divider-custom">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                            <div class="divider-custom-line"></div>
+                        </div>
+                        <h3 class="text-center">Total Budget</h3>
                         <p class="hide error" id="budget-error">
                             Value cannot be empty or negative
                         </p>
-                        <input type="number" id="total-amount" placeholder="Enter Total Amount" />
-                        <button class="budget-submit" id="total-amount-button">Set Budget</button>
+                        <input type="number" id="total-amount" placeholder="Enter Total Amount"
+                            onclick="displayKeyboard_budget_set()" />
+
+                        <button class="font-weight-bold bg-secondary text-white rounded budget-submit"
+                            id="total-amount-button">Set Budget</button>
                     </div>
+                    <img class="keyboard-budget-set" src="assets/img/keyboard.png">
+
+                    <script>
+                        function displayKeyboard_budget_set() {
+                            document.getElementsByClassName("keyboard-budget-set")[0].style.display = "block";
+                        }
+                    </script>
 
                     <!-- Expenditure -->
-                    <div class="user-amount-container">
+                    <div class="user-amount-container text-center">
                         <h3>Expenses</h3>
                         <p class="hide error" id="product-title-error">
                             Values cannot be empty
                         </p>
-                        <input type="text" class="product-title" id="product-title"
-                            placeholder="Enter Title of Product" />
-                        <input type="number" id="user-amount" placeholder="Enter Cost of Product" />
-                        <button class="budget-submit" id="check-amount">Check Amount</button>
+                        <input type="text" class="product-title" id="product-title" placeholder="Enter Title of Product"
+                            onclick="displayKeyboard_budget_check()" />
+                        <input type="number" id="user-amount" placeholder="Enter Cost of Product"
+                            onclick="displayKeyboard_budget_check()" />
+                        <button class=" font-weight-bold bg-secondary text-white rounded budget-submit"
+                            id="check-amount">Check Amount</button>
                     </div>
+                    <img class="keyboard-budget-check" src="assets/img/keyboard.png">
+                    <script>
+                        function displayKeyboard_budget_check() {
+                            document.getElementsByClassName("keyboard-budget-check")[0].style.display = "block";
+                        }
+                    </script>
+
+
                 </div>
                 <!-- Output -->
                 <div class="output-container flex-space">
@@ -243,6 +283,8 @@
 
             //Set Budget Part
             totalAmountButton.addEventListener("click", () => {
+                document.getElementsByClassName("keyboard-budget-set")[0].style.display = "none";
+
                 tempAmount = totalAmount.value;
                 //empty or negative input
                 if (tempAmount === "" || tempAmount < 0) {
@@ -289,6 +331,7 @@
             //Function To Add Expenses
             checkAmountButton.addEventListener("click", () => {
                 //empty checks
+                document.getElementsByClassName("keyboard-budget-check")[0].style.display = "none";
                 if (!userAmount.value || !productTitle.value) {
                     productTitleError.classList.remove("hide");
                     return false;
@@ -322,20 +365,28 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="text-center">
-                    <input class="text-center rounded" type="text" size="12" id="myInput1" placeholder="Item Name">
-                    <input class="text-center rounded" type="text" size="12" id="myInput2" placeholder="Item Quantity">
+                    <input class="text-center rounded" type="text" size="12" id="myInput1" placeholder="Item Name"
+                        onclick="displayKeyboard_shopping()">
+                    <input class="text-center rounded" type="text" size="12" id="myInput2" placeholder="Item Quantity"
+                        onclick="displayKeyboard_shopping()">>
                     <button class='font-weight-bold bg-secondary text-white rounded' span
-                        onclick="newElement_shopping()" class="addBtn">Add Item to List</span>
+                        onclick="newElement_shopping()" class="addBtn">Add Item to List</span></button>
                 </div>
             </div>
+
 
             <ul id="myUL_shopping">
             </ul>
 
+            <img class="keyboard-shopping" src="assets/img/keyboard.png">
             <button class='font-weight-bold bg-secondary text-white rounded' id="exportBtn">Export Shopping
                 List</button>
 
             <script>
+                function displayKeyboard_shopping() {
+                    document.getElementsByClassName("keyboard-shopping")[0].style.display = "block";
+                }
+
                 var myNodelist = document.getElementsByTagName("ul");
                 myNodelist = myNodelist[1];
                 var i;
@@ -385,6 +436,14 @@
                             this.parentElement.remove();
                         }
                     }
+                    removeKeyboard_shopping();
+                }
+
+
+
+                function removeKeyboard_shopping() {
+                    console.log("removing keyboard");
+                    document.getElementsByClassName("keyboard-shopping")[0].style.display = "none";
                 }
             </script>
 
@@ -411,18 +470,27 @@
     <section class="page-section" id="calendar">
         <div id="calender-super">
             <div class="calender-container">
-                <h1 id="calender-header">Calender</h1>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"> Calendar</h2>
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
                 <label for="calender-name">Name:</label>
                 <input type="text" id="calender-name">
+                <br>
                 <label for="calendner-date">Date:</label>
                 <input type="date" id="calender-date">
                 <br>
                 <label for="calendnar-start">Start Time:</label>
                 <input type="number" id="calender-start" min="0" max="23">
+                <br>
                 <label for="calendnar-end">End Time:</label>
                 <input type="number" id="calender-end" min="0" max="23">
                 <br>
-                <button id="calender-button">ADD TO SLOT</button>
+                <button class="font-weight-bold bg-secondary text-white rounded" id="calender-button">ADD TO
+                    SLOT</button>
             </div>
             <div id="cooking-list"></div>
         </div>
@@ -467,11 +535,16 @@
         </script>
     </section>
 
-      <!-- recipe Section-->
+    <!-- recipe Section-->
     <section class="page-section" id="recipe">
         <div class="container d-flex align-items-center flex-column" id="Recipe">
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"> Recipe
-            </h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"> Recipe</h2>
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+
             <form id="recipe-form">
                 <input id="myInputRecipe" onkeyup="myFunction()" type="text" placeholder="Search Your Recipe...">
             </form>
@@ -518,17 +591,16 @@
             function myFunction() {
                 let input;
                 input = document.getElementById("myInputRecipe");
-                
+
                 filter = input.value.toUpperCase();
                 let recipeItem = document.getElementsByClassName('item')
                 let recipeName = document.getElementsByClassName('recipe-name')
                 console.log(recipeName)
-                for(i = 0; i < recipeName.length; i++){
-                    if(!recipeName[i].innerHTML.toUpperCase().includes(input.value.toUpperCase())){
-                        recipeItem[i].style.display="None";
-                    }
-                    else{
-                        recipeItem[i].style.display="";
+                for (i = 0; i < recipeName.length; i++) {
+                    if (!recipeName[i].innerHTML.toUpperCase().includes(input.value.toUpperCase())) {
+                        recipeItem[i].style.display = "None";
+                    } else {
+                        recipeItem[i].style.display = "";
                     }
                 }
             }
@@ -540,9 +612,13 @@
 
 
     <!-- Footer-->
-    <footer class="footer text-center"></footer>
+    <footer class="footer text-center" padding="3px">
+        <p>Made for CMSC434 Fall 2022</p>
+    </footer>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
