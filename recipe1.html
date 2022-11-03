@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Freelancer - Start Bootstrap Theme</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Kitchen Companion</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="index.html#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="index.html#todo">ToDo</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="index.html#inventory">Inventory</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="index.html#budget">Budget</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="index.html#shopping">ShoppingList</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="index.html#calendar">Calendar</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="index.html#recipe">Recipe</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="assets/img/logo.png" alt="..." />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">Kitchen Companion</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0">The future of kitchen organization</p>
+        </div>
+    </header>
+    <section>
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+                Buffalo Chicken Dip Recipe
+                
+            </h1><br><br>
+            <label><b>Search Ingredient</b></label>
+            <input class="text-center" type="text" id="myInputIngredient" onkeyup="myFunction()" placeholder="Search Ingredient">
+            
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Ingredients</h2>
+            <ul class="page-section-heading text-center text-uppercase text-secondary mb-0" id="myUL">
+                <li><a href="">2 (10 ounce) cans chunk chicken, drained</a></li>
+                <li><a href="#">3/4 cup hot pepper sauce</a></li>
+              
+                <li><a href="#">2 (8 ounce) packages cream cheese, softened</a></li>
+                <li><a href="#">1 cup ranch dressing</a></li>
+              
+                <li><a href="#">1 ½ cups shredded Cheddar cheese</a></li>
+                <li><a href="#">1 bunch celery, cut into 4-inch pieces</a></li>
+                <li><a href="#">1 (8 ounce) box chicken-flavored crackers</a></li>
+            </ul>
+            <script>
+                function myFunction() {
+                    let input = document.getElementById("myInputIngredient");
+                    filter = input.value.toUpperCase();
+                    ul = document.getElementById("myUL");
+                    li = ul.getElementsByTagName("li");
+                    for (i = 0; i < li.length; i++) {
+                        a = li[i].getElementsByTagName("a")[0];
+                        
+                        txtValue = a.textContent || a.innerText;
+                        
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            li[i].style.display = "";
+                        } else {
+                            li[i].style.display = "none";
+                        }
+    }
+                }
+            </script>
+            <h2>Step 1</h2>
+            <p>
+                Heat chicken and hot pepper sauce in a skillet over medium heat until heated through, 3 to 5 minutes. Stir in cream cheese and ranch dressing. Cook and stir until well blended and warm, 3 to 5 minutes.
+            </p>
+            <h2>Step 2</h2>
+            <p>
+                Mix in 1/2 of the Cheddar cheese, and transfer the mixture to a slow cooker. Sprinkle the remaining cheese over top.
+            </p>
+            <h2>Step 3</h2>
+            <p>
+                Cover and cook on Low until dip is hot and bubbly, about 35 minutes.
+            </p>
+            <h2>Step 4</h2>
+            <p>
+                Serve with celery sticks and crackers.
+            </p>
+        </div>
+
+    </section>
+    
+</body>
