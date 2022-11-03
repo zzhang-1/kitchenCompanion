@@ -12502,6 +12502,7 @@ html {
 }
 
 <<<<<<< HEAD
+
 /*****************************budget list************************************************/
 .wrapper {
   width: 90%;
@@ -12808,10 +12809,10 @@ html {
   font-weight: 600;
   transition: .3s;
 }
-=======
-img{
-  width:100%;
-  height:100%;
+
+=======img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -12821,63 +12822,63 @@ img{
   margin: 20px auto;
 }*/
 
-form input{
-  width:100%;
-  background-color:transparent;
+form input {
+  width: 100%;
+  background-color: transparent;
   padding: 10px;
   /*border:none;*/
   /*outline:none;*/
-  font-size:2rem;
+  font-size: 2rem;
 }
 
-.search-result{
+.search-result {
   margin-top: 50px;
-  width:100%;
+  width: 100%;
   /*display:grid;*/
   grid-gap: 25px;
-  grid-template:auto/repeat(auto-fit, minmax(300px, 1fr));
+  grid-template: auto/repeat(auto-fit, minmax(300px, 1fr));
 }
 
 
-.item{
-  width:100%;
+.item {
+  width: 100%;
   border-radius: 8px;
   padding: 15px;
-  overflow:hidden;
+  overflow: hidden;
 }
 
-.item img{
-  width:100%;
+.item img {
+  width: 100%;
   height: 300px;
   border-radius: 4px;
 }
 
-.item .flex-container{
+.item .flex-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.item .recipe-name{
+.item .recipe-name {
   margin: 20px 10px 0 0;
   font-size: 1.8rem;
-  font-weight:400;
+  font-weight: 400;
 }
 
-.view-button{
-  width:130px;
-  padding:10px 0;
+.view-button {
+  width: 130px;
+  padding: 10px 0;
   text-align: center;
   background-color: grey;
-  color:white;
-  font-size:1.4rem;
-  font-weight:600;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
   margin-top: 20px;
-  align-self:flex-start;
+  align-self: flex-start;
 }
 
-.item-data{
-  display:block;
+.item-data {
+  display: block;
   margin-top: 10px;
   font-size: 1.4rem;
   letter-spacing: 0.05rem;
@@ -12886,13 +12887,14 @@ form input{
 
 #myUL {
   list-style-type: none;
-  
+
 }
 
 #myUL li a {
- 
-  margin-top: -1px; /* Prevent double borders */
- 
+
+  margin-top: -1px;
+  /* Prevent double borders */
+
   padding: 12px;
   text-decoration: none;
   font-size: 18px;
@@ -12900,7 +12902,9 @@ form input{
   display: block
 }
 
-#myInputRecipe1{
-  margin: 0 auto 0 auto;/*top right bottom left*/
+#myInputRecipe1 {
+  margin: 0 auto 0 auto;
+  /*top right bottom left*/
 }
->>>>>>> 9e122e978b79a0caeb2340b68b14693c25e408d8
+
+>>>>>>>9e122e978b79a0caeb2340b68b14693c25e408d8
