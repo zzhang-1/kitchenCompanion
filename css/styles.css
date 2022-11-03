@@ -12500,3 +12500,274 @@ html {
 .copyright {
   background-color: #1a252f;
 }
+
+/*****************************budget list************************************************/
+.wrapper {
+  width: 90%;
+  font-size: 16px;
+  max-width: 43.75em;
+  margin: 1em auto;
+}
+.budget-container {
+  width: 100%;
+}
+.sub-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3em;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex-space {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper h3 {
+  color: #363d55;
+  font-weight: 500;
+  margin-bottom: 0.6em;
+}
+.budget-container input {
+  display: block;
+  width: 100%;
+  padding: 0.6em 0.3em;
+  border: 1px solid #d0d0d0;
+  border-radius: 0.3em;
+  color: #414a67;
+  outline: none;
+  font-weight: 400;
+  margin-bottom: 0.6em;
+}
+.budget-container:focus {
+  border-color: #587ef4;
+}
+.total-amount-container,
+.user-amount-container {
+  background-color: #ffffff;
+  padding: 1.25em 0.9em;
+  border-radius: 0.3em;
+  box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+}
+.output-container {
+  background-color: #1abc9c;
+  color: #ffffff;
+  border-radius: 0.3em;
+  box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+  margin: 2em 0;
+  padding: 1.2em;
+}
+.output-container p {
+  font-weight: 500;
+  margin-bottom: 0.6em;
+}
+.output-container span {
+  display: block;
+  text-align: center;
+  font-weight: 400;
+  color: #e5e5e5;
+}
+.budget-submit {
+  font-size: 1em;
+  margin-top: 0.8em;
+  background-color: #1abc9c;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  padding: 0.6em 1.2em;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+.list {
+  background-color: #ffffff;
+  padding: 1.8em 1.2em;
+  box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+  border-radius: 0.6em;
+}
+.sublist-content {
+  width: 100%;
+  border-left: 0.3em solid #587ef4;
+  margin-bottom: 0.6em;
+  padding: 0.5em 1em;
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr 1fr;
+}
+.product {
+  font-weight: 500;
+  color: #363d55;
+}
+.amount {
+  color: #414a67;
+  margin-left: 20%;
+}
+.icons-container {
+  width: 5em;
+  margin: 1.2em;
+  align-items: center;
+}
+.product-title {
+  margin-bottom: 1em;
+}
+.hide {
+  display: none;
+}
+.error {
+  color: #ff465a;
+}
+.delete {
+  background: transparent;
+  cursor: pointer;
+  margin-right: 1.5em;
+  border: none;
+  color: #587ef4;
+}
+@media screen and (max-width: 600px) {
+  .wrapper {
+    font-size: 14px;
+  }
+  .sub-container {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+}
+/*******************************calendar*******************************************/
+#calender-super{
+  background-color: rgb(245, 207, 207);
+}
+.calender-container{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.calender-container input{
+  margin:10px;
+  font-size: 20px;
+  border-radius: 5px;
+  border-color: grey;
+}
+
+.calender-container label {
+  color:#1abc9c;
+  font-size:20px;
+}
+#calender-name{
+  width:150px
+}
+#calender-end,
+#calender-start{
+  width:100px;
+}
+
+#calender-button{
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #1abc9c;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;  
+  margin-top: 20px;
+  margin-bottom:20px;
+}
+
+#calender-button:hover {
+  background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+#calender-button:active {
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+#calender-button:hover {
+  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+#slotName{
+  color: white;
+  border:none 2px green;
+  background-color:skyblue;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  text-align: center;
+  margin-top:20px;
+
+}
+#cooking-list{
+  text-align: center;
+  background:skyblue;
+  
+}
+.calender-delete{
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 2px solid #1abc9c;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 10px #333;
+  overflow: hidden;
+  transition: .3s;
+}
+.calender-delete:hover{
+  background-color: rgb(245, 207, 207);
+  transform: scale(1.2);
+  box-shadow: 0 0 4px #111;
+  transition: .3s;
+}
+.calender-delete:focus{
+  width: 150px;
+  height: 50px;
+  transition: .3s;
+}
+.calender-delete:focus #delete-span{
+  opacity: 1;
+  transition: .3s;
+}
+svg {
+  color: rgb(231, 50, 50);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .3s;
+}
+.calender-delete:focus svg {
+  opacity: 0;
+  transition: .3s;
+}
+#delete-span{
+  width: 150px;
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  color: rgb(231, 50, 50);
+  font-weight: 600;
+  transition: .3s;
+}
