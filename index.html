@@ -187,7 +187,110 @@
 
     <!-- inventory Section-->
     <section class="page-section" id="inventory">
+        <div class="container d-flex align-items-center flex-column" id="ToDo">
+        <div id="myDIV" class="header">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"> Inventory</h2>
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="text-center">
+                
+                <label for="invName">Name</label>
+                <input class="text-center rounded" type="text" size="12" placeholder="Ex. John" id="invName"
+                    onclick=""> <br>
 
+                <label for="invItemName">Item Name</label>
+                <input class="text-center rounded" type="text" size="12" placeholder="Ex. Eggs" id="invItemName"
+                    onclick=""> <br>
+
+                <label for="invQuant">Quantity</label>
+                <input class="text-center rounded" type="text" size="12" placeholder="Ex. 12" id="invQuant"
+                    onclick=""> <br>
+
+                <label for="invLoc">Location</label>
+                <input class="text-center rounded" type="text" size="12" placeholder="Ex. Refrigerator" id="invLoc"
+                    onclick=""> <br>
+
+                <label for="invCal">Calendar</label>
+                <input class="text-center rounded" type="date" size="12" placeholder="" id="invCal"
+                    onclick=""> <br>
+                   
+                <button class='font-weight-bold bg-secondary text-white rounded' span
+                    onclick="newElement_inv()" class="invAddBtn">Add Item</span></button>
+            </div>
+        </div>
+        <p>Name | Item Name | Location | Date | Quantity</p>
+        <ul id="myUL_inventory">
+        </ul>
+
+        <script>
+            // Create a "close" button and append it to each list item
+            var myNodelist = document.getElementsByTagName("ul");
+            var i;
+            for (i = 0; i < myNodelist.length-3; i++) {
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                myNodelist[i].appendChild(span);
+            }
+
+            // Click on a close button to hide the current list item
+            var close = document.getElementsByClassName("close");
+            var i;
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.display = "none";
+                }
+            }
+
+            function newElement_inv() {
+                let liItem = document.createElement("p");
+
+                let name = document.getElementById("invName").value;
+                let t1 = document.createTextNode(name);
+                liItem.appendChild(t1);
+
+                let itemName = " | " + document.getElementById("invItemName").value;
+                let t2 =  document.createTextNode(itemName);
+                liItem.appendChild(t2);
+
+                let itemLoc = " | " + document.getElementById("invLoc").value;
+                let t3 =  document.createTextNode(itemLoc);
+                liItem.appendChild(t3);
+
+                let itemCal = " | " + document.getElementById("invCal").value + " | " ;
+                let t4 =  document.createTextNode(itemCal);
+                liItem.appendChild(t4);
+
+                let itemQuantBox =  document.createElement("input");
+                itemQuantBox.setAttribute('type', 'number');
+                let itemQuant = document.getElementById("invQuant").value;
+                itemQuantBox.setAttribute('value', itemQuant)
+                liItem.appendChild(itemQuantBox);
+
+                document.getElementById("myUL_inventory").appendChild(liItem);
+
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                liItem.appendChild(span);
+            
+                for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function() {
+                        var div = this.parentElement;
+                        div.style.display = "none";
+                    }
+                }
+            }
+       
+
+        </script>
+        </div>
     </section>
 
     <!-- budget Section-->
@@ -368,7 +471,7 @@
                     <input class="text-center rounded" type="text" size="12" id="myInput1" placeholder="Item Name"
                         onclick="displayKeyboard_shopping()">
                     <input class="text-center rounded" type="text" size="12" id="myInput2" placeholder="Item Quantity"
-                        onclick="displayKeyboard_shopping()">>
+                        onclick="displayKeyboard_shopping()">
                     <button class='font-weight-bold bg-secondary text-white rounded' span
                         onclick="newElement_shopping()" class="addBtn">Add Item to List</span></button>
                 </div>
