@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Kitchen Companion</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#page-top">Kitchen Companion</a>
+        <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+            aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-0 mx-lg-1" style="border-width:3px; border-style:solid; border-color:white;">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded text-center" href="index.html#about">About</a></li>
+                <li class="nav-item mx-0 mx-lg-1" style="border-width:3px; border-style:solid; border-color:white;">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded text-center" href="#todo">ToDo</a></li>
+                <li class="nav-item mx-0 mx-lg-1" style="border-width:3px; border-style:solid; border-color:white;">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded text-center" href="#inventory">Inventory</a></li>
+                <li class="nav-item mx-0 mx-lg-1" style="border-width:3px; border-style:solid; border-color:white;">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded text-center" href="#budget">Budget</a></li>
+                <li class="nav-item mx-0 mx-lg-1" style="border-width:3px; border-style:solid; border-color:white;">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded text-center" href="#shopping">ShoppingList</a></li>
+                <li class="nav-item mx-0 mx-lg-1" style="border-width:3px; border-style:solid; border-color:white;">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded text-center" href="#calendar">Calendar</a></li>
+                <li class="nav-item mx-0 mx-lg-1" style="border-width:3px; border-style:solid; border-color:white;">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded text-center" href="#recipe">Recipe</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<body id="page-top">
+    
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="assets/img/logo.png" alt="..." />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">Kitchen Companion</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0">The Future of Kitchen Organization</p>
+        </div>
+    </header>
+
+
+    <section>
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+                Pumpkin Waffles with Apple Cider Syrup
+                
+            </h1><br><br>
+            <label><b>Search Ingredient</b></label>
+            <input class="text-center" type="text" id="myInputIngredient" onclick="displayKeyboard_recipe()" placeholder="Search Ingredient">
+            <button class="font-weight-bold bg-secondary text-white rounded button-add" id="addBtn" onclick="myFunction()"
+            >Search</button>
+            <img class="keyboard-recipe" src="assets/img/keyboard.png">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Ingredients</h2>
+            <ul class="page-section-heading text-center text-uppercase text-secondary mb-0" id="myUL">
+                <li><a href="">2 ½ cups all-purpose flour</a></li>
+                <li><a href="#">4 teaspoons baking powder</a></li>
+                <li><a href="#">2 teaspoons ground cinnamon</a></li>
+                <li><a href="#">1 teaspoon ground allspice</a></li>
+                <li><a href="#">1 teaspoon ground ginger</a></li>
+                <li><a href="#">½ teaspoon salt</a></li>
+                <li><a href="#">¼ cup packed brown sugar</a></li>
+                <li><a href="">1 cup canned pumpkin</a></li>
+                <li><a href="#">2 cups milk</a></li>
+                <li><a href="#">4 eggs, separated</a></li>
+                <li><a href="#">¼ cup butter, melted</a></li>
+                <li><a href="#">½ cup white sugar</a></li>
+                <li><a href="#">1 tablespoon cornstarch</a></li>
+                <li><a href="#">1 teaspoon ground cinnamon</a></li>
+                <li><a href="#">1 cup apple cider</a></li>
+                <li><a href="#">1 tablespoon lemon juice</a></li>
+                <li><a href="#">2 tablespoons butter</a></li>
+            </ul>
+            <script>
+                function myFunction() {
+                    let input = document.getElementById("myInputIngredient");
+                    filter = input.value.toUpperCase();
+                    ul = document.getElementById("myUL");
+                    li = ul.getElementsByTagName("li");
+                    for (i = 0; i < li.length; i++) {
+                        a = li[i].getElementsByTagName("a")[0];
+                        
+                        txtValue = a.textContent || a.innerText;
+                        
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            li[i].style.display = "";
+                        } else {
+                            li[i].style.display = "none";
+                        }
+                    }
+                    removeKeyboard_recipe()
+                }
+                function displayKeyboard_recipe() {
+                    // alert(document.getElementsByClassName("keyboard"));
+                    document.getElementsByClassName("keyboard-recipe")[0].style.display = "block";
+                }
+                function removeKeyboard_recipe() {
+                        
+                    document.getElementsByClassName("keyboard-recipe")[0].style.display = "none";
+                }
+            </script>
+            <h2>Step 1</h2>
+            <p>
+                Preheat a waffle iron according to manufacturer's instructions.
+            </p>
+            <h2>Step 2</h2>
+            <p>
+                Combine the flour, baking powder, cinnamon, allspice, ginger, salt, and brown sugar in a mixing bowl. 
+                In a separate bowl, stir together the pumpkin, milk, and egg yolks. 
+                Whip the egg whites in a clean dry bowl until soft peaks form.
+            </p>
+            <h2>Step 3</h2>
+            <p>
+                Stir the flour mixture and 1/4 cup melted butter to the pumpkin mixture, stirring just to combine. 
+                Use a whisk or rubber spatula to fold 1/3 of the egg whites into the batter, stirring gently until incorporated. 
+                Fold in the remaining egg whites. Cook waffles according to manufacturer's instructions.
+            </p>
+            <h2>Step 4</h2>
+            <p>
+                To make the syrup, stir together the sugar, cornstarch, and cinnamon in a saucepan. 
+                Stir in the apple cider and lemon juice. Cook over medium heat until mixture begins to boil; boil until the syrup thickens. 
+                Remove from heat and stir in the 2 tablespoons of butter until melted. Serve warm.
+            </p>
+        </div>
+
+    </section>
+    
+</body>

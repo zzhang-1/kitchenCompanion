@@ -200,32 +200,35 @@
 
                     <label for="invName">Name</label>
                     <input class="text-center rounded" type="text" size="12" placeholder="Ex. John" id="invName"
-                        onclick="">
+                        onclick="displayKeyboard_inv()">
                     <br>
 
                     <label for="invItemName">Item Name</label>
                     <input class="text-center rounded" type="text" size="12" placeholder="Ex. Eggs" id="invItemName"
-                        onclick=""> <br>
+                        onclick="displayKeyboard_inv()"> <br>
 
                     <label for="invQuant">Quantity</label>
                     <input class="text-center rounded" type="text" size="12" placeholder="Ex. 12" id="invQuant"
-                        onclick="">
+                        onclick="displayKeyboard_inv()">
                     <br>
 
                     <label for="invLoc">Location</label>
                     <input class="text-center rounded" type="text" size="12" placeholder="Ex. Refrigerator" id="invLoc"
-                        onclick=""> <br>
+                        onclick="displayKeyboard_inv()"> <br>
 
                     <label for="invCal">Calendar</label>
-                    <input class="text-center rounded" type="date" size="12" placeholder="" id="invCal" onclick=""> <br>
+                    <input class="text-center rounded" type="date" size="12" placeholder="" id="invCal" onclick="removeKeyboard_inv()"> <br>
 
                     <button class='font-weight-bold bg-secondary text-white rounded' span onclick="newElement_inv()"
                         class="invAddBtn">Add Item</span></button>
                 </div>
+                
             </div>
+            <img class="keyboard-inv" src="assets/img/keyboard.png">
             <p>Name | Item Name | Location | Date | Quantity</p>
             <ul id="myUL_inventory">
             </ul>
+            
 
             <script>
                 // Create a "close" button and append it to each list item
@@ -288,6 +291,14 @@
                             div.style.display = "none";
                         }
                     }
+                    removeKeyboard_inv()
+                }
+
+                function displayKeyboard_inv(){
+                    document.getElementsByClassName("keyboard-inv")[0].style.display = "block";
+                }
+                function removeKeyboard_inv() {
+                    document.getElementsByClassName("keyboard-inv")[0].style.display = "none";
                 }
             </script>
         </div>
@@ -664,9 +675,12 @@
                 <div class="divider-custom-line"></div>
             </div>
 
-            <form id="recipe-form">
-                <input id="myInputRecipe" onkeyup="myFunction()" type="text" placeholder="Search Your Recipe...">
-            </form>
+          
+                <input id="myInputRecipe"  type="text" placeholder="Search Your Recipe..." onclick="displayKeyboard_recipe()"><br>
+                <button class="font-weight-bold bg-secondary text-white rounded button-add" id="addBtn" onclick="myFunction()"
+                        >Search</button>
+                <img class="keyboard-recipe" src="assets/img/keyboard.png">
+           
         </div>
         <div class="search-result">
             <div class="item">
@@ -694,7 +708,7 @@
                 <p class="item-data"> Calories: 412</p>
             </div>
             <div class="item">
-                <img src="assets/img/chicken-pot-pie.png">
+                <img src="assets/img/waffles.png">
                 <div class="flex-container">
                     <h1 class="recipe-name">Pumpkin Waffles with Apple Cider Syrup</h1>
                     <a class="view-button" href="recipe4.html">View Recipe</a>
@@ -702,10 +716,10 @@
                 <p class="item-data"> Calories: 530</p>
             </div>
         </div>
-        <section id="recipe1">
+        <!--<section id="recipe1">
 
 
-        </section>
+        </section>-->
         <script>
             function myFunction() {
                 let input;
@@ -722,6 +736,16 @@
                         recipeItem[i].style.display = "";
                     }
                 }
+                removeKeyboard_recipe()
+            }
+
+            function displayKeyboard_recipe() {
+                // alert(document.getElementsByClassName("keyboard"));
+                document.getElementsByClassName("keyboard-recipe")[0].style.display = "block";
+            }
+            function removeKeyboard_recipe() {
+                    
+                document.getElementsByClassName("keyboard-recipe")[0].style.display = "none";
             }
         </script>
 
