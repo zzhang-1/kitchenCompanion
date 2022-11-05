@@ -70,6 +70,12 @@
 
     <!-- About Section-->
     <section class="page-section bg-secondary text-white text-center" id="about">
+        <h2 class="masthead-heading text-uppercase mb-0">About</h2>
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
         <div class="container c-flex align-items-center flex-column">
             <p class="mb-4">
                 Kitchen Companion is an application to create an easy process for keeping your household clean and
@@ -87,7 +93,7 @@
     <section class="page-section" id="todo">
         <div class="container d-flex align-items-center flex-column" id="ToDo">
             <div id="myDIV" class="header">
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"> Kitchen ToDo List
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Kitchen ToDo List
                 </h2>
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -217,22 +223,18 @@
                         onclick="displayKeyboard_inv()"> <br>
 
                     <label for="invCal">Calendar</label>
-                    <input class="text-center rounded" type="date" size="12" placeholder="" id="invCal" onclick="removeKeyboard_inv()"> <br>
+                    <input class="text-center rounded" type="date" size="12" placeholder="" id="invCal"
+                        onclick="removeKeyboard_inv()"> <br>
 
                     <button class='font-weight-bold bg-secondary text-white rounded' span onclick="newElement_inv()"
                         class="invAddBtn">Add Item</span></button>
                 </div>
-                
+
             </div>
             <img class="keyboard-inv" src="assets/img/keyboard.png">
             <p>Name | Item Name | Location | Date | Quantity</p>
             <ul id="myUL_inventory">
             </ul>
-          
-            <table id="myTable" onclick="removeKeyboard_table()">
-                
-              </table>
-              <img class="keyboard-table" src="assets/img/keyboard.png">
             
 
             <script>
@@ -353,9 +355,10 @@
                     removeKeyboard_inv()
                 }
 
-                function displayKeyboard_inv(){
+                function displayKeyboard_inv() {
                     document.getElementsByClassName("keyboard-inv")[0].style.display = "block";
                 }
+
                 function removeKeyboard_inv() {
                     document.getElementsByClassName("keyboard-inv")[0].style.display = "none";
                 }*/
@@ -734,12 +737,13 @@
                 <div class="divider-custom-line"></div>
             </div>
 
-          
-                <input id="myInputRecipe"  type="text" placeholder="Search Your Recipe..." onclick="displayKeyboard_recipe()"><br>
-                <button class="font-weight-bold bg-secondary text-white rounded button-add" id="addBtn" onclick="myFunction()"
-                        >Search</button>
-                <img class="keyboard-recipe" src="assets/img/keyboard.png">
-           
+
+            <input id="myInputRecipe" type="text" placeholder="Search Your Recipe..."
+                onclick="displayKeyboard_recipe()"><br>
+            <button class="font-weight-bold bg-secondary text-white rounded button-add" id="addBtn"
+                onclick="myFunction()">Search</button>
+            <img class="keyboard-recipe" src="assets/img/keyboard.png">
+
         </div>
         <div class="search-result">
             <div class="item">
@@ -802,8 +806,9 @@
                 // alert(document.getElementsByClassName("keyboard"));
                 document.getElementsByClassName("keyboard-recipe")[0].style.display = "block";
             }
+
             function removeKeyboard_recipe() {
-                    
+
                 document.getElementsByClassName("keyboard-recipe")[0].style.display = "none";
             }
         </script>
