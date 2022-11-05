@@ -12841,6 +12841,9 @@ img {
 .keyboard-recipe {
   display: none;
 }
+.keyboard-table{
+  display: none;
+}
 
 /*#recipe-form{
   width:90%;
@@ -12931,5 +12934,14 @@ form input {
 #myInputRecipe1 {
   margin: 0 auto 0 auto;
   /*top right bottom left*/
+}
+
+#tableQuant{
+  width: 30px;
+  
+}
+#deleteRow{
+  height:30px;
+  width:62px;
 }
 

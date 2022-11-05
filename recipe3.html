@@ -70,8 +70,12 @@
                 Chicken Pot Pie Recipe
                 
             </h1><br><br>
-            <label><b>Search Ingredient</b></label>
-            <input class="text-center" type="text" id="myInputIngredient" onkeyup="myFunction()" placeholder="Search Ingredient">
+            <label ><b>Search Ingredient</b></label>
+            <input class="text-center" type="text" id="myInputIngredient" onclick="displayKeyboard_recipe()" placeholder="Search Ingredient">
+            <button class="font-weight-bold bg-secondary text-white rounded button-add" id="addBtn" onclick="myFunction()"
+                        >Search</button>
+            <img class="keyboard-recipe" src="assets/img/keyboard.png">
+            
             
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Ingredients</h2>
             <ul class="page-section-heading text-center text-uppercase text-secondary mb-0" id="myUL">
@@ -108,7 +112,18 @@
                         } else {
                             li[i].style.display = "none";
                         }
-    }
+                    }
+
+                    removeKeyboard_recipe()
+                }
+
+                function displayKeyboard_recipe() {
+                    // alert(document.getElementsByClassName("keyboard"));
+                    document.getElementsByClassName("keyboard-recipe")[0].style.display = "block";
+                }
+                function removeKeyboard_recipe() {
+                    
+                    document.getElementsByClassName("keyboard-recipe")[0].style.display = "none";
                 }
             </script>
             <h2>Step 1</h2>

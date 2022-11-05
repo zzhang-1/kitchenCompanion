@@ -238,10 +238,67 @@
             <p>Name | Item Name | Location | Date | Quantity</p>
             <ul id="myUL_inventory">
             </ul>
-
-
+            
+            <table id="myTable" onclick="removeKeyboard_table()">
+                
+            </table>
+            <img class="keyboard-table" src="assets/img/keyboard.png">
             <script>
-                // Create a "close" button and append it to each list item
+
+                    function newElement_inv() {
+
+                        let name = document.getElementById("invName").value ;
+                        let itemName = " | "+ document.getElementById("invItemName").value ;
+                        let itemLoc = " | " + document.getElementById("invLoc").value;
+                        let itemCal = " | " + document.getElementById("invCal").value + " | ";
+
+                        let itemQuantBox = document.createElement("input");
+                        itemQuantBox.setAttribute("id", "tableQuant")
+                        itemQuantBox.setAttribute('type', 'number');
+                        let itemQuant = document.getElementById("invQuant").value;
+                        itemQuantBox.setAttribute('value', itemQuant)
+                        itemQuantBox.setAttribute('onkeyup', "displayKeyboard_table()")
+
+                        let deleteButton = document.createElement("button");
+                        deleteButton.setAttribute("id", "deleteRow")
+                        deleteButton.innerHTML = "Delete";
+                        deleteButton.setAttribute('value', "Delete")
+                        deleteButton.setAttribute('onclick', "deleteRow(this)")
+
+                        var table = document.getElementById("myTable");
+                        var row = table.insertRow(0);
+                        var cell1 = row.insertCell(0);
+                        var cell2 = row.insertCell(1);
+                        var cell3 = row.insertCell(2);
+                        var cell4 = row.insertCell(3);
+                        var cell5 = row.insertCell(4);
+                        var cell6 = row.insertCell(5);
+            
+                        cell1.innerHTML = name;
+                        cell2.innerHTML = itemName;
+                        cell3.innerHTML = itemLoc;
+                        cell4.innerHTML = itemCal;
+                        cell5.appendChild(itemQuantBox)
+                        cell6.appendChild(deleteButton)
+                        removeKeyboard_inv()
+                    }
+                    function deleteRow(r) {
+                        var i = r.parentNode.parentNode.rowIndex;
+                        document.getElementById("myTable").deleteRow(i);
+                    }
+                    function displayKeyboard_inv(){
+                        document.getElementsByClassName("keyboard-inv")[0].style.display = "block";
+                    }
+                    function removeKeyboard_inv() {
+                        document.getElementsByClassName("keyboard-inv")[0].style.display = "none";
+                    }
+                    function displayKeyboard_table(){
+                        document.getElementsByClassName("keyboard-table")[0].style.display = "block";
+                    }
+                    function removeKeyboard_table() {
+                        document.getElementsByClassName("keyboard-table")[0].style.display = "none";
+                    }
+                /*// Create a "close" button and append it to each list item
                 var myNodelist = document.getElementsByTagName("ul");
                 var i;
                 for (i = 0; i < myNodelist.length - 3; i++) {
@@ -310,7 +367,7 @@
 
                 function removeKeyboard_inv() {
                     document.getElementsByClassName("keyboard-inv")[0].style.display = "none";
-                }
+                }*/
             </script>
         </div>
     </section>
