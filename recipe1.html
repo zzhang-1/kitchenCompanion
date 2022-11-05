@@ -64,15 +64,18 @@
             <p class="masthead-subheading font-weight-light mb-0">The future of kitchen organization</p>
         </div>
     </header>
-    <section>
-        <div class="container d-flex align-items-center flex-column">
+    <section >
+        <div class="container d-flex align-items-center flex-column" >
             <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">
                 Buffalo Chicken Dip Recipe
                 
             </h1><br><br>
-            <label><b>Search Ingredient</b></label>
-            <input class="text-center" type="text" id="myInputIngredient" onkeyup="myFunction()" placeholder="Search Ingredient">
-            
+            <label ><b>Search Ingredient</b></label>
+            <input class="text-center" type="text" id="myInputIngredient" onclick="displayKeyboard_recipe()" placeholder="Search Ingredient">
+            <button class="font-weight-bold bg-secondary text-white rounded button-add" id="addBtn" onclick="myFunction()"
+                        >Search</button>
+            <img class="keyboard-recipe" src="assets/img/keyboard.png">
+
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Ingredients</h2>
             <ul class="page-section-heading text-center text-uppercase text-secondary mb-0" id="myUL">
                 <li><a href="">2 (10 ounce) cans chunk chicken, drained</a></li>
@@ -101,7 +104,18 @@
                         } else {
                             li[i].style.display = "none";
                         }
-    }
+                    }
+                    removeKeyboard_recipe()
+                   
+                }
+
+                function displayKeyboard_recipe() {
+                    // alert(document.getElementsByClassName("keyboard"));
+                    document.getElementsByClassName("keyboard-recipe")[0].style.display = "block";
+                }
+                function removeKeyboard_recipe() {
+                    
+                    document.getElementsByClassName("keyboard-recipe")[0].style.display = "none";
                 }
             </script>
             <h2>Step 1</h2>
