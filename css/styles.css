@@ -12691,7 +12691,8 @@ html {
 
 #calender-end,
 #calender-start {
-  width: 100px;
+  width: 200px;
+  font-size:14px;
 }
 
 #calender-button {
