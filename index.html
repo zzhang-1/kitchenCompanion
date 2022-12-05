@@ -264,6 +264,7 @@
                         deleteButton.innerHTML = "Delete";
                         deleteButton.setAttribute('value', "Delete")
                         deleteButton.setAttribute('onclick', "deleteRow(this)")
+                        deleteButton.setAttribute('class', 'font-weight-bold bg-secondary text-white rounded')
 
                         var table = document.getElementById("myTable");
                         var row = table.insertRow(0);
@@ -674,10 +675,10 @@
                 <input type="date" id="calender-date">
                 <br>
                 <label for="calendnar-start">Start Time:</label>
-                <input type="number" id="calender-start" min="0" max="23" onclick="displayKeyboard_calendar()">
+                <input type="number" id="calender-start" min="0" max="23" placeholder ="0-23" onclick="displayKeyboard_calendar()">
                 <br>
                 <label for="calendnar-end">End Time:</label>
-                <input type="number" id="calender-end" min="0" max="23" onclick="displayKeyboard_calendar()">
+                <input type="number" id="calender-end" min="0" max="23" placeholder ="0-23" onclick="displayKeyboard_calendar()">
                 <br>
                 <img class="keyboard-calendar" src="assets/img/keyboard.png">
                 <script>
