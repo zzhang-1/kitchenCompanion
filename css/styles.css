@@ -1,9 +1,14 @@
 @charset "UTF-8";
 
+#myUL_todo {
+  font-size: x-large;
+  font-weight: 200;
+}
+
 .close {
   text-align: center;
   position: absolute;
-  right: 5em;
+  right: 2.5em;
   color: red;
   font-size: larger;
 }
@@ -12824,9 +12829,11 @@ img {
 .keyboard-todo {
   display: none;
 }
+
 .keyboard-inv {
   display: none;
 }
+
 .keyboard-budget-set {
   display: none;
 }
@@ -12834,14 +12841,17 @@ img {
 .keyboard-budget-check {
   display: none;
 }
+
 .keyboard-calendar,
 .keyboard-shopping {
   display: none;
 }
+
 .keyboard-recipe {
   display: none;
 }
-.keyboard-table{
+
+.keyboard-table {
   display: none;
 }
 
@@ -12936,12 +12946,12 @@ form input {
   /*top right bottom left*/
 }
 
-#tableQuant{
+#tableQuant {
   width: 30px;
-  
-}
-#deleteRow{
-  height:30px;
-  width:62px;
+
 }
 
+#deleteRow {
+  height: 30px;
+  width: 62px;
+}
